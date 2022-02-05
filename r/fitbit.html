@@ -442,6 +442,17 @@ summary(hourly_sci)</code></pre>
 ##  3rd Qu.:  357.0   3rd Qu.:108.00   3rd Qu.: 16.00   3rd Qu.:0.2667  
 ##  Max.   :10554.0   Max.   :948.00   Max.   :180.00   Max.   :3.0000</code></pre>
 </div>
+<div id="daily-activities-sleep" class="section level3">
+<h3>Daily Activities &amp; Sleep</h3>
+<pre class="r"><code>n_distinct(sleep_day$Id)</code></pre>
+<pre><code>## [1] 24</code></pre>
+<pre class="r"><code>n_distinct(daily_activity$Id)</code></pre>
+<pre><code>## [1] 33</code></pre>
+<pre class="r"><code>nrow(sleep_day)</code></pre>
+<pre><code>## [1] 413</code></pre>
+<pre class="r"><code>nrow(daily_activity)</code></pre>
+<pre><code>## [1] 940</code></pre>
+</div>
 </div>
 </div>
 <div id="step-4-analyze" class="section level1">
@@ -525,8 +536,11 @@ ggplot(sleep_day_pu, aes(x = Id, y = hoursAsleep)) +
 </div>
 <div id="step-5-share" class="section level1">
 <h1>Step 5: Share</h1>
-<div id="final-observations-and-conclusion" class="section level2">
-<h2>Final Observations and Conclusion</h2>
+<div id="ideas-for-fitbit" class="section level2">
+<h2>Ideas for FitBit</h2>
+<ul>
+<li>This</li>
+</ul>
 </div>
 </div>
 

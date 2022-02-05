@@ -62,7 +62,6 @@ daily_activity %>%
 ```
 #### Discoveries:
 * Average total steps per day are 7638 which a little bit less for having health benefits for according to the CDC research. They found that taking 8,000 steps per day was associated with a 51% lower risk for all-cause mortality (or death from all causes). Taking 12,000 steps per day was associated with a 65% lower risk compared with taking 4,000 steps.
-* Average sedentary time is 991 minutes(16 hours), needs to be reduced.
 
 ### Sleep Day
 ```{r explore sleep day}
@@ -147,6 +146,18 @@ hourly_sci <- subset(hourly_sci, select = -c(ActivityHour))
 summary(hourly_sci)
 ```
 
+### Daily Activities & Sleep
+```{r comapre sleep_day and daily_activities}
+n_distinct(sleep_day$Id)
+n_distinct(daily_activity$Id)
+nrow(sleep_day)
+nrow(daily_activity)
+```
+
+```{r merging daily steps and hours asleep}
+
+```
+
 # Step 4: Analyze
 ## Pivot Tables
 ### Hourly Activities
@@ -193,8 +204,6 @@ ggplot(sleep_day_pu, aes(x = Id, y = hoursAsleep)) +
 
 ##### We can observe that some users are not getting enough hours of sleep which is 7-9 hours for adults as recommended by WHO.
 
-
-
 ### Hourly activities for all users
 #### Avergae Steps
 ```{r average_steps vs Hour}
@@ -218,4 +227,6 @@ ggplot(hourly_general, aes(x=Hour, y=average_calories)) +
 ##### These graphs show us the hours when users are most active. FitBit can leverage this isnsight and send psuh notifications to users to remind and encourage them about workout (go for a walk or run) during these hours. Peak activity is observed between *5pm and 7pm.*
 
 # Step 5: Share
-## Final Observations and Conclusion
+## Recommendations for FitBit
+* Push notifications should be sent to users between 5 pm and 7 pm to remind them to exercise as they generally more active during these hours.
+* Users with less than 7 hours average sleep time should be encouraged to go to bed earlier so they can get more sleep.
